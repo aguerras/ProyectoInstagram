@@ -1,0 +1,48 @@
+﻿.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.navbar .logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo-section div {
+    align-self: stretch;
+    width: 1px;
+    background: black;
+    margin: 0 20px;
+}
+
+.navbar .icons-section .fa {
+    text-decoration: none;
+    color: inherit;
+    font-size: 2rem;
+    margin: 0 10px;
+}
+
+.navbar .logo {
+    width: 40px;
+}
+
+.navbar .logoname {
+    width: 130px;
+}
+
+.navbar .input-search {
+    background: #fafafa;
+    border: solid 1px #dbdbdb;
+    border-radius: 3px;
+    color: #999;
+    text-align: center;
+    padding: 5px 10px 5px 25px;
+    outline: 0;
+}
+
+.navbar .input-search:focus {
+    text-align: left;
+}
