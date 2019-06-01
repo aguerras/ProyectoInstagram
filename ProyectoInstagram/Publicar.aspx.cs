@@ -13,7 +13,8 @@ namespace ProyectoInstagram
     public partial class Publicar : System.Web.UI.Page
     {
         public LinkedListDouble publicaciones;
-        public String user_name; 
+        Usuario usuario = new Usuario();
+        public ArbolAVL usuariosRegistrados = new ArbolAVL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -65,7 +66,7 @@ namespace ProyectoInstagram
             {
                 id = ultimo.Id_publicacion + 1;
             }
-            Publicacion publicacion = new Publicacion(id, user_name, descripcion, imagen, fecha);
+            Publicacion publicacion = new Publicacion(id, usuario.Nombre_usuario, descripcion, imagen, fecha);
             publicaciones.insertar(publicacion);
             Session["publicaciones"] = publicaciones;
             Response.Redirect("/Profile");
@@ -77,11 +78,18 @@ namespace ProyectoInstagram
             try
             {
                 publicaciones = (LinkedListDouble)Session["publicaciones"];
-                user_name = (String)Session["user_name"];
-                if (user_name == null)
+                String id_usuario = (String)Session["id_usuario"];
+                usuariosRegistrados = (ArbolAVL)Session["usuariosRegistrados"];
+
+                if (id_usuario == null)
                 {
-                    Response.Redirect("/Login");
+                    Response.Redirect("/Login.aspx");
                 }
+                else
+                {
+                    usuario = (Usuario)usuariosRegistrados.buscar(id_usuario);
+                }
+
                 if (publicaciones == null)
                 {
                     publicaciones = new LinkedListDouble();
