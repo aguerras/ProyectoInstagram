@@ -14,19 +14,22 @@
     <link rel="stylesheet" type="text/css" href="/Content/Profile.css" />
 </head>
 <body>
-    <nav class="navbar">
-        <section class="logo-section"><img class="logo" src="" />
-            <div></div>
-            <img class="logoname" src="" />
-        </section>
-        <form class="search-section"><input class="input-search" type="search" name="search" placeholder="Buscar" autocomplete="off"/></form>
-        <section class="icons-section">
-            <a class="fa fa-compass" href="#"></a><a class="fa fa-heart-o" href="#"></a><a class="fa fa-user-o" href="#"></a>
-            <a class="fa fa-plus" href="/Publicar" aria-hidden="true"></a>
-        </section>
-    </nav>
-
+    
     <form runat="server">
+        <nav class="navbar">
+            <section class="logo-section"><img class="logo" src="" />
+                <div></div>
+                <img class="logoname" src="" />
+            </section>
+
+            <section class="icons-section">
+                <asp:Button class="btn profile-edit-btn" id="btn_cerrar_sesion" OnClick="btn_cerrarSesion" runat="server" Text="Cerrar sesión"/>
+                <a class="fa fa-compass" href="#"></a><a class="fa fa-heart-o" href="#"></a><a class="fa fa-user-o" href="#"></a>
+                <a class="fa fa-plus" href="/Publicar" aria-hidden="true"></a>
+            </section>
+        </nav>
+
+    
         <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

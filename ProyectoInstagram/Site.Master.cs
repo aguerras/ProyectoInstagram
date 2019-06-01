@@ -13,5 +13,11 @@ namespace ProyectoInstagram
         {
 
         }
+
+        protected void btn_cerrarSesion(object sender, EventArgs e)
+        {
+            Session["id_usuario"] = null;
+            Response.Redirect("/Profile-edit.aspx");
+        }
     }
 }

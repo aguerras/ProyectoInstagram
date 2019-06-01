@@ -25,18 +25,20 @@ namespace ProyectoInstagram
                 while (publicaciones.getActual() != null)
                 {
                     Publicacion publicacion_actual = (Publicacion)publicaciones.getActual();
-                    String strPublicacionHTML = "";
-                    strPublicacionHTML = "<div class='gallery'><div class='gallery-item' tabindex='0'><img src='" + publicacion_actual.Imagen + "' class='gallery-image' alt=''>";
-                    strPublicacionHTML = strPublicacionHTML + "<div class='gallery-item-type'>";
-                    strPublicacionHTML = strPublicacionHTML + "<img src='" + usuario.Foto + "' alt='' width='32' height='32'/><h2 class=''><a style='text-decoration: none;' class='' title='" + publicacion_actual.User_name + "' href='#'>" + publicacion_actual.User_name + "</a></h2></div>";
-                    strPublicacionHTML = strPublicacionHTML + "<div class='gallery-item-info'><ul>";
-                    strPublicacionHTML = strPublicacionHTML + "<li class='gallery-item-description'><span class='visually-hidden'>Descripcion:</span><p style='color: #fff;'>" + publicacion_actual.Descripcion + "</p></li>";
-                    //strPublicacionHTML = strPublicacionHTML + "<li class='gallery-item-likes'><span class='visually-hidden'>Likes:</span><i class='fas fa-heart' aria-hidden='true'></i>0</li>";
-                    //strPublicacionHTML = strPublicacionHTML + "<li class='gallery-item-comments'><span class='visually-hidden'>Comments:</span><i class='fas fa-comment' aria-hidden='true'></i>0</li>";
-                    strPublicacionHTML = strPublicacionHTML + "</ul></div></div></div>";
+                    if (publicacion_actual.User_name == usuario.Nombre_usuario) {
+                        String strPublicacionHTML = "";
+                        strPublicacionHTML = "<div class='gallery'><div class='gallery-item' tabindex='0'><img src='" + publicacion_actual.Imagen + "' class='gallery-image' alt=''>";
+                        strPublicacionHTML = strPublicacionHTML + "<div class='gallery-item-type'>";
+                        strPublicacionHTML = strPublicacionHTML + "<img src='" + usuario.Foto + "' alt='' width='32' height='32'/><h2 class=''><a style='text-decoration: none;' class='' title='" + publicacion_actual.User_name + "' href='#'>" + publicacion_actual.User_name + "</a></h2></div>";
+                        strPublicacionHTML = strPublicacionHTML + "<div class='gallery-item-info'><ul>";
+                        strPublicacionHTML = strPublicacionHTML + "<li class='gallery-item-description'><span class='visually-hidden'>Descripcion:</span><p style='color: #fff;'>" + publicacion_actual.Descripcion + "</p></li>";
+                        //strPublicacionHTML = strPublicacionHTML + "<li class='gallery-item-likes'><span class='visually-hidden'>Likes:</span><i class='fas fa-heart' aria-hidden='true'></i>0</li>";
+                        //strPublicacionHTML = strPublicacionHTML + "<li class='gallery-item-comments'><span class='visually-hidden'>Comments:</span><i class='fas fa-comment' aria-hidden='true'></i>0</li>";
+                        strPublicacionHTML = strPublicacionHTML + "</ul></div></div></div>";
 
 
-                    strPublicacionesHTML = strPublicacionesHTML + strPublicacionHTML;
+                        strPublicacionesHTML = strPublicacionesHTML + strPublicacionHTML;
+                    }
                     publicaciones.next();
                 }
             }
