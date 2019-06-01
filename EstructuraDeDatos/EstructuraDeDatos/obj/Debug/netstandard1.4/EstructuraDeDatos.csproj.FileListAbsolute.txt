@@ -24,3 +24,12 @@ C:\Users\kyone\source\repos\ProyectoNetflix\EstructuraDeDatos\EstructuraDeDatos\
 C:\Users\kyone\source\repos\ProyectoNetflix\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.AssemblyInfo.cs
 C:\Users\kyone\source\repos\ProyectoNetflix\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.dll
 C:\Users\kyone\source\repos\ProyectoNetflix\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.pdb
+C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\bin\Debug\netstandard1.4\EstructuraDeDatos.deps.json
+C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\bin\Debug\netstandard1.4\EstructuraDeDatos.dll
+C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\bin\Debug\netstandard1.4\EstructuraDeDatos.pdb
+C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.csproj.CoreCompileInputs.cache
+C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.AssemblyInfoInputs.cache
+C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.AssemblyInfo.cs
+C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.dll
+C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.pdb
+C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.csprojAssemblyReference.cache

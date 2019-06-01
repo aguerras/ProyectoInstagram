@@ -393,6 +393,7 @@ namespace EstructuraDeDatos
         bool menorIgualQue(Object q);
         bool mayorQue(Object q);
         bool mayorIgualQue(Object q);
+        bool igualar(Object p, Object q);
     }
 
 
@@ -419,7 +420,14 @@ namespace EstructuraDeDatos
 
         public Object getRaiz()
         {
-            return this.raiz.getValor();
+            try
+            {
+                return this.raiz.getValor();
+            }
+            catch (NullReferenceException e)
+            {
+                return null;
+            }
         }
 
         private NodoArbolAVL rotacionII(NodoArbolAVL nodo, NodoArbolAVL nodo2)
@@ -709,6 +717,81 @@ namespace EstructuraDeDatos
                     break;
             }
             return n;
+        }
+
+        //Nodo raiz
+        public NodoArbolAVL getNodoRaiz()
+        {
+            return this.raiz;
+        }
+
+        //Obtener el nodo mayor.
+        public Object getMayor(NodoArbolAVL r) {
+            if (r.getDerecho() != null)
+            {
+                return getMayor(r.getDerecho());
+            } else
+            {
+                return r.getValor();
+            }
+        }
+
+        //Buscar nodo
+        public Object buscar(Object valor)
+        {
+            if (raiz == null)
+                return null;
+            else
+                return buscar(raiz, valor);
+        }
+        protected Object buscar(NodoArbolAVL raizSub, Object valor)
+        {
+            if (raizSub == null)
+                return null;
+
+            Comparador comparador;
+            comparador = (Comparador)raizSub.getValor();
+
+            if (comparador.igualQue(valor))
+                return raizSub.getValor();
+
+            if (buscar(raizSub.getIzquierdo(), valor) != null)
+            {
+                return buscar(raizSub.getIzquierdo(), valor);
+            }
+            else
+            {
+                return buscar(raizSub.getDerecho(), valor);
+            }
+        }
+
+        //Igualar 2 valores.
+        public Object igualar(Object valor1, Object valor2)
+        {
+            if (raiz == null)
+                return null;
+            else
+                return igualar(raiz, valor1, valor2);
+        }
+        protected Object igualar(NodoArbolAVL raizSub, Object valor1, Object valor2)
+        {
+            if (raizSub == null)
+                return null;
+
+            Comparador comparador;
+            comparador = (Comparador)raizSub.getValor();
+
+            if (comparador.igualar(valor1, valor2))
+                return raizSub.getValor();
+
+            if (igualar(raizSub.getIzquierdo(), valor1, valor2) != null)
+            {
+                return igualar(raizSub.getIzquierdo(), valor1, valor2);
+            }
+            else
+            {
+                return igualar(raizSub.getDerecho(), valor1, valor2);
+            }
         }
 
         /////////////////////////////////

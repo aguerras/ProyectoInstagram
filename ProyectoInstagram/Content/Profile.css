@@ -441,3 +441,7 @@ title-form {
     .form-image input {
         margin: 10px
     }
+
+.form-error {
+    color: red !important;
+}

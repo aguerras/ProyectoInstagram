@@ -91,3 +91,13 @@ body {
     color: #3897f0;
     font-weight: normal;
 }
+
+/*FORMS*/
+
+.label-form {
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+.form-error {
+    color: red;
+}

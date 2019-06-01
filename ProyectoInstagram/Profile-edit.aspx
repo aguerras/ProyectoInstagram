@@ -7,18 +7,29 @@
             <br>
             <div class="l-part">
                 <div class="form-image">
-			        <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
-                    <input type="file" class="input-1"/>
+			        <img src="/Images/default-user.png" alt="">
+                    <asp:FileUpload id="foto" runat="server" class="input-1"/>
 		        </div>
+                
                 <span class="label-form">Nombre</span>
-                <input type="text" placeholder="Nombre completo" class="input-1" />
+                <asp:TextBox runat="server" id="nombre" placeholder="Nombre completo" class="input-1"/>
+                <asp:RequiredFieldValidator runat="server" id="req" controltovalidate="nombre" errormessage="Nombre completo es requerido!" Display="Dynamic" class="form-error"/>
+
                 <span class="label-form">Nombre de usuario</span>
-                <input type="text" placeholder="Nombre de usuario" class="input-1" disabled/>
-                <span class="label-form">Biografía</span>
-                <input type="text" placeholder="Biografía" class="input-1" />
+                <asp:TextBox runat="server" id="nombre_usuario" placeholder="Nombre de usuario" class="input-1" ReadOnly="true"/>
+
+                <span class="label-form">Biografía </span>
+                <asp:TextBox runat="server" TextMode="multiline" Columns="50" Rows="5" id="bio" class="input-1"/>
+
+                <span class="label-form">Fecha de nacimiento: </span>
+                <asp:TextBox runat="server" id="fecha_nacimiento" class="input-1"/>
+                <asp:RequiredFieldValidator runat="server" id="req2" controltovalidate="fecha_nacimiento" errormessage="Fecha de nacimiento es requerido!" Display="Dynamic" class="form-error"/>
+
                 <span class="label-form">Contraseña</span>
-                <input type="password" placeholder="Contraseña" class="input-2" />
-                <input type="button" value="Enviar" class="btn-form" />
+                <asp:TextBox runat="server" id="password" placeholder="Contraseña" class="input-2" type="password"/>
+                <asp:RequiredFieldValidator runat="server" id="req4" controltovalidate="password" errormessage="Contraseña es requerido!" Display="Dynamic" class="form-error"/>
+
+                <asp:Button runat="server" id="btnSubmitForm" text="Enviar" class="btn-form" OnClick="btn_editar_perfil"/>
             </div>
         </div>
     </div>
