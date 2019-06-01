@@ -39,7 +39,7 @@ namespace ProyectoInstagram
                 FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
 
                 //Display the Picture in Image control.
-                Image1.ImageUrl = "~/Files/" + Path.GetFileName(FileUpload1.FileName);
+                Image1.ImageUrl = "/Files/" + Path.GetFileName(FileUpload1.FileName);
             }
             catch (Exception)
             {
@@ -51,6 +51,12 @@ namespace ProyectoInstagram
             int id = 1;
             String descripcion = txt_descripcion.Text;
             String imagen = Image1.ImageUrl;
+            if (imagen == "")
+            {
+                string script = "alert(\"Debe Subir la imagen para poder guardar\");";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                return;
+            }
             DateTime fecha = DateTime.Now;
             Publicacion ultimo = null;
             try
