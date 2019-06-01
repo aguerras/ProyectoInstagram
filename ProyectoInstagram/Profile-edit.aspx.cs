@@ -5,13 +5,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace ProyectoInstagram
 {
     public partial class Profile_edit : System.Web.UI.Page
     {
         public ArbolAVL usuariosRegistrados = new ArbolAVL();
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,7 +32,8 @@ namespace ProyectoInstagram
                 bio.Text = usuario.Bio;
                 fecha_nacimiento.Text = usuario.Fecha_nacimiento;
                 password.Text = usuario.Password;
-
+                
+                Image1.ImageUrl = usuario.Foto;
             }
         }
 
@@ -42,13 +43,24 @@ namespace ProyectoInstagram
             string savePath = "/Imagen/default-user.png";
             try
             {
-                savePath = "/Images/" + foto.FileName;
-                foto.SaveAs(savePath);
+                string folderPath = Server.MapPath("~/Files/");
+
+                //Check whether Directory (Folder) exists.
+                if (!Directory.Exists(folderPath))
+                {
+                    //If Directory (Folder) does not exists Create it.
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                //Save the File to the Directory (Folder).
+                savePath = "/Files/" + Path.GetFileName(foto.FileName);
+                foto.SaveAs(folderPath + Path.GetFileName(foto.FileName));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
+
 
             int id_usuario = (int)Session["id_usuario"];
             usuariosRegistrados = (ArbolAVL)Session["usuariosRegistrados"];

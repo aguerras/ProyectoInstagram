@@ -7,7 +7,7 @@
             <br>
             <div class="l-part">
                 <div class="form-image">
-			        <img src="/Images/default-user.png" alt="">
+                    <asp:Image ID="Image1" runat="server" />
                     <asp:FileUpload id="foto" runat="server" class="input-1"/>
 		        </div>
                 

@@ -1,10 +1,12 @@
 ﻿using EstructuraDeDatos;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml;
 
 namespace ProyectoInstagram
 {
@@ -53,6 +55,50 @@ namespace ProyectoInstagram
                 Session["id_usuario"] = usuario.Id_usuario;
                 Response.Redirect("/Profile.aspx");
             }
+        }
+
+        protected void btn_xml(object sender, EventArgs e)
+        {
+            usuariosRegistrados = (ArbolAVL)Session["usuariosRegistrados"];
+
+            try
+            {
+                string folderPath = Server.MapPath("~/Files/");
+
+                //Check whether Directory (Folder) exists.
+                if (!Directory.Exists(folderPath))
+                {
+                    //If Directory (Folder) does not exists Create it.
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                //Save the File to the Directory (Folder).
+                string savePath = folderPath + Path.GetFileName(fileXml.FileName);
+                fileXml.SaveAs(savePath);
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(folderPath + fileXml.FileName);
+                XmlNodeList nodeList = xmlDoc.DocumentElement.SelectNodes("/USERDATA/USER");
+                int id = 0;
+                string nombreUsuario = "", nombreCompleto = "", fotoPath = "", cumpleanios = "";
+                foreach (XmlNode node in nodeList)
+                {
+                    Usuario usrTmp = new Usuario();
+                    usrTmp = (Usuario)usuariosRegistrados.getMayor(usuariosRegistrados.getNodoRaiz());
+                    id = usrTmp.Id_usuario + 1;
+
+                    nombreUsuario = node.SelectSingleNode("USERNAME").InnerText;
+                    nombreCompleto = node.SelectSingleNode("FULLNAME").InnerText;
+                    fotoPath = node.SelectSingleNode("PROFILEIMAGE").InnerText;
+                    cumpleanios = node.SelectSingleNode("BIRTHDATE").InnerText;
+
+                    Usuario usuario = new Usuario(id, nombreCompleto, cumpleanios, "", nombreUsuario, "123", fotoPath);
+                    usuariosRegistrados.insertar(usuario);
+                }
+                Session["usuariosRegistrados"] = usuariosRegistrados;
+            } catch (Exception){}
+
+            Response.Redirect("/Profile-edit.aspx");
         }
     }
 }
