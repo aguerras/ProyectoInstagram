@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace EstructuraDeDatos
 {
@@ -434,6 +435,12 @@ namespace EstructuraDeDatos
         {
             nodo.setIzquierdo(nodo2.getDerecho());
             nodo2.setDerecho(nodo);
+
+            using (StreamWriter w = File.AppendText("C:\\Users\\Kevin Guerra\\Desktop" + "/Bitacora.txt"))
+            {
+                w.WriteLine("Factor de equilibrio = " + (nodo.getFactorEquilibrio() + nodo2.getFactorEquilibrio()) + "; Nodos en la rotación = " + nodo.getValor().ToString() + ", " + nodo2.getValor().ToString() + "; Rotación II");
+            }
+
             // actualización de los factores de equilibrio
             if (nodo2.getFactorEquilibrio() == -1) // se cumple en la inserción
             {
@@ -445,6 +452,7 @@ namespace EstructuraDeDatos
                 nodo.setFactorEquilibrio(-1);
                 nodo2.setFactorEquilibrio(-1);
             }
+
             return nodo2;
         }
 
@@ -452,6 +460,11 @@ namespace EstructuraDeDatos
         {
             nodo.setDerecho(nodo2.getIzquierdo());
             nodo2.setIzquierdo(nodo);
+
+            using (StreamWriter w = File.AppendText("C:\\Users\\Kevin Guerra\\Desktop" + "/Bitacora.txt"))
+            {
+                w.WriteLine("Factor de equilibrio = " + (nodo.getFactorEquilibrio() + nodo2.getFactorEquilibrio()) + "; Nodos en la rotación = " + nodo.getValor().ToString() + ", " + nodo2.getValor().ToString() + "; Rotación DD");
+            }
             // actualización de los factores de equilibrio
             if (nodo2.getFactorEquilibrio() == +1) // se cumple en la inserción
             {
@@ -463,6 +476,7 @@ namespace EstructuraDeDatos
                 nodo.setFactorEquilibrio(+1);
                 nodo2.setFactorEquilibrio(+1);
             }
+            
             return nodo2;
         }
 
@@ -474,6 +488,12 @@ namespace EstructuraDeDatos
             nodo3.setDerecho(nodo);
             nodo2.setDerecho(nodo3.getIzquierdo());
             nodo3.setIzquierdo(nodo2);
+
+            using (StreamWriter w = File.AppendText("C:\\Users\\Kevin Guerra\\Desktop" + "/Bitacora.txt"))
+            {
+                w.WriteLine("Factor de equilibrio = " + (nodo.getFactorEquilibrio() + nodo2.getFactorEquilibrio() + nodo3.getFactorEquilibrio()) + "; Nodos en la rotación = " + nodo.getValor().ToString() + ", " + nodo2.getValor().ToString() + ", " + nodo3.getValor().ToString() + "; Rotación ID");
+            }
+
             // actualización de los factores de equilibrio
             if (nodo3.getFactorEquilibrio() == +1)
                 nodo2.setFactorEquilibrio(-1);
@@ -484,6 +504,7 @@ namespace EstructuraDeDatos
             else
                 nodo.setFactorEquilibrio(0);
             nodo3.setFactorEquilibrio(0);
+
             return nodo3;
         }
 
@@ -495,6 +516,12 @@ namespace EstructuraDeDatos
             nodo3.setIzquierdo(nodo);
             nodo2.setIzquierdo(nodo3.getDerecho());
             nodo3.setDerecho(nodo2);
+
+            using (StreamWriter w = File.AppendText("C:\\Users\\Kevin Guerra\\Desktop" + "/Bitacora.txt"))
+            {
+                w.WriteLine("Factor de equilibrio = "+(nodo.getFactorEquilibrio() + nodo2.getFactorEquilibrio() + nodo3.getFactorEquilibrio())+"; Nodos en la rotación = " + nodo.getValor().ToString() + ", " + nodo2.getValor().ToString() + ", " + nodo3.getValor().ToString() + "; Rotación DI");
+            }
+
             // actualización de los factores de equilibrio
             if (nodo3.getFactorEquilibrio() == +1)
                 nodo.setFactorEquilibrio(-1);
@@ -505,6 +532,7 @@ namespace EstructuraDeDatos
             else
                 nodo2.setFactorEquilibrio(0);
             nodo3.setFactorEquilibrio(0);
+
             return nodo3;
         }
 

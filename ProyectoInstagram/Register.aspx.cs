@@ -45,7 +45,7 @@ namespace ProyectoInstagram
             String fecha_nacimiento = Request.Form["fecha_nacimiento"];
             String nombre_usuario = Request.Form["nombre_usuario"];
             String password = Request.Form["password"];
-            Usuario usuario = new Usuario(id_usuario,nombre,fecha_nacimiento,"",nombre_usuario,password,"");
+            Usuario usuario = new Usuario(id_usuario,nombre,fecha_nacimiento,"",nombre_usuario,password,"/Images/default-user.png");
             usuariosRegistrados.insertar(usuario);
             Session["usuariosRegistrados"] = usuariosRegistrados;
             Session["id_usuario"] = id_usuario;

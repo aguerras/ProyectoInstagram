@@ -32,3 +32,4 @@ C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\
 C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.AssemblyInfo.cs
 C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.dll
 C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.pdb
+C:\Users\Kevin Guerra\Source\Repos\aguerras\ProyectoInstagram\EstructuraDeDatos\EstructuraDeDatos\obj\Debug\netstandard1.4\EstructuraDeDatos.csprojAssemblyReference.cache
