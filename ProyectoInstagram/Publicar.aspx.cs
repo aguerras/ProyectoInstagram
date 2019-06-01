@@ -78,16 +78,15 @@ namespace ProyectoInstagram
             try
             {
                 publicaciones = (LinkedListDouble)Session["publicaciones"];
-                String id_usuario = (String)Session["id_usuario"];
                 usuariosRegistrados = (ArbolAVL)Session["usuariosRegistrados"];
 
-                if (id_usuario == null)
+                if (Session["id_usuario"] == null)
                 {
                     Response.Redirect("/Login.aspx");
                 }
                 else
                 {
-                    usuario = (Usuario)usuariosRegistrados.buscar(id_usuario);
+                    usuario = (Usuario)usuariosRegistrados.buscar(Session["id_usuario"]);
                 }
 
                 if (publicaciones == null)
