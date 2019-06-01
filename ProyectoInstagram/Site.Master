@@ -22,6 +22,7 @@
         <form class="search-section"><input class="input-search" type="search" name="search" placeholder="Buscar" autocomplete="off"/></form>
         <section class="icons-section">
             <a class="fa fa-compass" href="#"></a><a class="fa fa-heart-o" href="#"></a><a class="fa fa-user-o" href="#"></a>
+            <a class="fa fa-plus" href="/Publicar" aria-hidden="true"></a>
         </section>
     </nav>
 
