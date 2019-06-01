@@ -29,8 +29,8 @@
                 <div class="s-part">¿Crear una cuenta? <a href="/Register.aspx">Registrar</a></div>
                 <br />
                 <div class="s-part">
-                    <asp:FileUpload ID="fileXml" runat="server" />
-                    <asp:Button runat="server" id="btnXml" text="Subir archivo xml" OnClick="btn_xml" CausesValidation="False"/>
+                    <asp:FileUpload ID="fileXml" runat="server" class="input-1"/>
+                    <asp:Button runat="server" id="btnXml" text="Subir archivo xml" OnClick="btn_xml" CausesValidation="False" class="btn-login"/>
                 </div>
             </div>
         </form>
